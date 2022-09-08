@@ -1,0 +1,21 @@
+Laravel結合Vite+Vue.js
+
+1.github Fork 專案 -> 重新命名
+
+2.pull 至本機 -> 建立新分支source備份原始專案
+
+3.還原環境
+
+3-1.還原Laravel
+composer install (需要先安裝composer)
+根部錄下找到.env.example
+->複製
+->修改檔名.env (刪除 copy.example)
+->修改設定檔內容
+if 發現APP_KEY= 為空值 -> php artisan key:generate 建立新的key
+DB_DATABASE=laravel ,laravel 修改為 laravel_todo > 到MyAdmin建立資料庫laravel_todo
+php artisan migrate 依據database\migrations建立預設資料表
+
+3-1.還原Vite+Vue.js
+npm install (需要先安裝nod.js 使用npm)
+npm run dev 執行Vue.js 伺服器
